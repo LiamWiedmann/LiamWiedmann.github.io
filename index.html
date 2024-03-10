@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIDI Reverb Effect</title>
+    <script src="https://cdn.jsdelivr.net/npm/webmidi@latest/dist/iife/webmidi.iife.js"></script>
+    <style>
+      body {
+        background-color: rgb(0, 221, 255);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Adjust as needed */
+      }
+
+      /* CSS for slider thumb */
+      input[type="range"]::-webkit-slider-thumb {
+        background: linear-gradient(to right, #5454dd 50%, #8cee8c 50%);
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        background: linear-gradient(to right, #5b5be0 50%, #7be97b 50%);
+      }
+
+      /* Style for labels */
+      label {
+        margin: 10px 0; /* Adjust vertical spacing */
+      }
+
+      /* Style for dropdowns */
+      select {
+        margin-bottom: 20px; /* Adjust vertical spacing */
+      }
+    </style>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>MIDI Reverb Effect</h1>
+
+    <h2>Liam Wiedmann</h2>
+
+    <label for="midiInput">MIDI Input:</label>
+    <select id="midiInput"></select>
+
+    <label for="midiOutput">MIDI Output:</label>
+    <select id="midiOutput"></select>
+
+    <p>
+      This MIDI effect adds reverb to MIDI notes. This website takes a Midi
+      note, and applies reverb to the note. There is a slider to adjust how much
+      reverb there is from 0 to 10 seconds, and a display just below. In
+      addition, the color of the background changes with the slider, with blue
+      being at 0 seconds, and dynamically changing to green at 10 seconds. Most
+      of the work I did was in the formatting section of the html.
+    </p>
+
+    <label for="reverbAmount">Reverb Amount:</label>
+    <input type="range" id="reverbAmount" min="0" max="10" step="1" value="1" />
+
+    <p id="reverbDisplay">Reverb Amount: 1 second</p>
+  </body>
+</html>
